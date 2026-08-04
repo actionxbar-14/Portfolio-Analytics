@@ -1,5 +1,5 @@
 import { motion, AnimatePresence } from 'framer-motion';
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import { Link, Route, Routes, useLocation } from 'react-router-dom';
 import { BarChart3, BriefcaseBusiness, Database, FolderKanban, LayoutGrid, Search, Sparkles, TrendingUp, UserCircle2, BadgeCheck, FileText, Settings, BrainCircuit } from 'lucide-react';
 import analytics from './data/analytics.json';
@@ -14,6 +14,9 @@ import repository from './data/repository.json';
 import portfolioAvatar from './assets/portfolio_img.png';
 import { ResponsiveContainer, AreaChart, Area, BarChart, Bar, CartesianGrid, XAxis, YAxis, Tooltip, PieChart, Pie, Cell, RadarChart, PolarGrid, PolarAngleAxis, PolarRadiusAxis, Radar } from 'recharts';
 
+// eslint-disable-next-line @typescript-eslint/triple-slash-reference
+/// <reference types="vite/client" />
+
 type StatCardProps = {
   label: string;
   value: string;
@@ -26,6 +29,31 @@ const StatCard = ({ label, value, tone }: StatCardProps) => (
     <div className={`mt-2 text-3xl font-semibold text-${tone}`}>{value}</div>
   </motion.div>
 );
+
+const roleRotator = ['Aspiring Data Analyst', 'Data Engineer', 'BI Enthusiast', 'Analytics Builder'];
+
+function RoleTicker() {
+  const [index, setIndex] = useState(0);
+
+  useEffect(() => {
+    const timer = window.setInterval(() => {
+      setIndex((prev) => (prev + 1) % roleRotator.length);
+    }, 1800);
+    return () => window.clearInterval(timer);
+  }, []);
+
+  return (
+    <motion.div
+      key={roleRotator[index]}
+      initial={{ opacity: 0, y: 10 }}
+      animate={{ opacity: 1, y: 0 }}
+      exit={{ opacity: 0, y: -10 }}
+      className="mt-2 inline-flex items-center rounded-full border border-brand-cyan/25 bg-brand-cyan/10 px-3 py-1 text-sm font-medium text-brand-cyan"
+    >
+      {roleRotator[index]}
+    </motion.div>
+  );
+}
 
 const shellItems = [
   { to: '/', label: 'Executive Dashboard', icon: LayoutGrid },
@@ -45,31 +73,34 @@ function App() {
   const location = useLocation();
   const [query, setQuery] = useState('');
 
-  const filteredProjects = projects.filter((project) => `${project.title} ${project.category} ${project.tools.join(' ')}`.toLowerCase().includes(query.toLowerCase()));
-  const filteredDatasets = datasets.filter((dataset) => dataset.name.toLowerCase().includes(query.toLowerCase()));
-
   return (
     <div className="min-h-screen bg-slate-950 text-slate-100">
       <div className="flex min-h-screen">
-        <aside className="hidden w-72 flex-col border-r border-white/10 bg-slate-900/80 p-6 lg:flex">
-          <div className="mb-8">
-            <div className="text-sm uppercase tracking-[0.28em] text-brand-cyan">Anubhav Career Portfolio</div>
-            <div className="mt-2 text-xl font-semibold">Professional analytics-driven career showcase</div>
+        <aside className="hidden w-72 flex-col border-r border-white/10 bg-slate-900/80 p-4 lg:flex">
+          <div className="mb-5 rounded-2xl border border-white/10 bg-slate-800/70 p-4">
+            <div className="text-[10px] uppercase tracking-[0.32em] text-brand-cyan">Anubhav Career Portfolio</div>
+            <div className="mt-2 text-lg font-semibold text-white">Analytics workspace</div>
           </div>
-          <nav className="space-y-2">
+          <nav className="flex-1 space-y-1.5">
             {shellItems.map(({ to, label, icon: Icon }) => {
               const active = location.pathname === to;
               return (
-                <Link key={to} to={to} className={`flex items-center gap-3 rounded-xl px-4 py-3 text-sm transition ${active ? 'bg-brand-blue/20 text-white shadow-glow' : 'text-slate-400 hover:bg-white/5 hover:text-white'}`}>
-                  <Icon size={18} />
-                  {label}
+                <Link
+                  key={to}
+                  to={to}
+                  className={`group flex items-center gap-3 rounded-2xl px-3 py-3 text-sm font-medium transition ${active ? 'bg-brand-blue/20 text-white shadow-glow' : 'text-slate-400 hover:bg-white/5 hover:text-white'}`}
+                >
+                  <span className={`flex h-9 w-9 items-center justify-center rounded-xl ${active ? 'bg-brand-blue/20 text-brand-cyan' : 'bg-slate-800/70 text-slate-400 group-hover:text-white'}`}>
+                    <Icon size={17} />
+                  </span>
+                  <span>{label}</span>
                 </Link>
               );
             })}
           </nav>
-          <div className="mt-8 rounded-2xl border border-brand-cyan/20 bg-brand-cyan/10 p-4">
+          <div className="mt-4 rounded-2xl border border-brand-cyan/20 bg-brand-cyan/10 p-4">
             <div className="flex items-center gap-2 text-brand-cyan"><Sparkles size={16}/> AI Analyst</div>
-            <div className="mt-3 text-sm text-slate-300">Ask: “Show all SQL projects” or “Compare Banking vs Mobile Analytics”.</div>
+            <div className="mt-2 text-sm leading-6 text-slate-300">Ask: “Show all SQL projects” or “Compare Banking vs Mobile Analytics”.</div>
           </div>
         </aside>
 
@@ -77,8 +108,9 @@ function App() {
           <header className="border-b border-white/10 bg-slate-900/70 px-6 py-4 backdrop-blur">
             <div className="flex flex-col gap-4 lg:flex-row lg:items-center lg:justify-between">
               <div>
-                <div className="text-sm uppercase tracking-[0.3em] text-slate-400">Enterprise Analytics Workspace</div>
-                <div className="text-2xl font-semibold">Anubhav Pathak · Aspiring Data Analyst | Data Engineer</div>
+                <div className="text-sm uppercase tracking-[0.3em] text-slate-400">Anubhav's Analytics Workspace</div>
+                <div className="text-2xl font-semibold">Anubhav Pathak</div>
+                <RoleTicker />
               </div>
               <div className="flex items-center gap-3 rounded-2xl border border-white/10 bg-slate-800/70 px-4 py-3">
                 <Search size={18} className="text-slate-400" />
@@ -88,6 +120,17 @@ function App() {
           </header>
 
           <div className="p-6 lg:p-8">
+            <div className="mb-6 flex flex-wrap gap-2 rounded-2xl border border-white/10 bg-slate-900/70 p-2 shadow-glow">
+              {shellItems.map(({ to, label, icon: Icon }) => {
+                const active = location.pathname === to;
+                return (
+                  <Link key={to} to={to} className={`flex items-center gap-2 rounded-xl px-3 py-2 text-sm transition ${active ? 'bg-brand-blue/20 text-white' : 'text-slate-400 hover:bg-white/5 hover:text-white'}`}>
+                    <Icon size={16} />
+                    {label}
+                  </Link>
+                );
+              })}
+            </div>
             <AnimatePresence mode="wait">
               <Routes location={location} key={location.pathname}>
                 <Route path="/" element={<HomePage />} />
@@ -115,11 +158,23 @@ function HomePage() {
   return (
     <motion.div initial={{ opacity: 0, y: 28 }} animate={{ opacity: 1, y: 0 }} exit={{ opacity: 0, y: -28 }} className="space-y-6">
       <div className="rounded-3xl border border-white/10 bg-gradient-to-br from-slate-800/90 to-slate-900/80 p-6 shadow-glow">
-        <div className="grid gap-6 lg:grid-cols-[1.15fr,0.85fr]">
+        <div className="grid gap-6 xl:grid-cols-[1.2fr,0.8fr]">
           <div>
             <div className="text-sm uppercase tracking-[0.32em] text-brand-cyan">Executive Intelligence Overview</div>
             <h1 className="mt-3 text-3xl font-semibold sm:text-4xl">Business analytics portfolio shaped as a live enterprise operating system.</h1>
             <p className="mt-4 max-w-2xl text-slate-400">Every metric, project, and skill is framed as an analytical asset for recruiters and hiring teams.</p>
+            <div className="mt-5 rounded-2xl border border-white/10 bg-slate-900/70 p-4">
+              <div className="text-sm uppercase tracking-[0.3em] text-slate-400">Professional Summary</div>
+              <p className="mt-2 text-sm leading-7 text-slate-300">{resume.headline}</p>
+              <ul className="mt-3 space-y-2 text-sm text-slate-400">
+                {resume.atsSummary.map((item) => (
+                  <li key={item} className="flex items-start gap-2">
+                    <span className="mt-1 h-2 w-2 rounded-full bg-brand-cyan" />
+                    <span>{item}</span>
+                  </li>
+                ))}
+              </ul>
+            </div>
           </div>
           <div className="rounded-2xl border border-white/10 bg-slate-900/70 p-4">
             <div className="overflow-hidden rounded-2xl border border-white/10 bg-transparent">
@@ -143,8 +198,8 @@ function HomePage() {
         <StatCard label="Rows Processed" value={overview.rowsProcessed} tone="brand-green" />
       </div>
 
-      <div className="grid gap-6 xl:grid-cols-[1.2fr,0.8fr]">
-        <div className="rounded-3xl border border-white/10 bg-slate-800/70 p-5 shadow-glow">
+      <div className="grid gap-4 2xl:grid-cols-[1.15fr,0.85fr]">
+        <div className="rounded-3xl border border-white/10 bg-slate-800/70 p-4 shadow-glow">
           <div className="mb-4 flex items-center justify-between">
             <div>
               <div className="text-sm uppercase tracking-[0.3em] text-slate-400">Learning Timeline</div>
@@ -201,9 +256,9 @@ function HomePage() {
             </ResponsiveContainer>
           </div>
         </div>
-        <div className="rounded-3xl border border-white/10 bg-slate-800/70 p-5 shadow-glow">
-          <div className="mb-4 text-sm uppercase tracking-[0.3em] text-slate-400">Career KPIs</div>
-          <div className="grid gap-3">
+        <div className="rounded-3xl border border-white/10 bg-slate-800/70 p-4 shadow-glow">
+          <div className="mb-3 text-sm uppercase tracking-[0.3em] text-slate-400">Career KPIs</div>
+          <div className="grid gap-2">
             <div className="rounded-2xl border border-white/10 bg-slate-900/70 p-4"><div className="text-slate-400">Internship Duration</div><div className="mt-2 text-2xl font-semibold text-brand-cyan">{overview.internshipDuration}</div></div>
             <div className="rounded-2xl border border-white/10 bg-slate-900/70 p-4"><div className="text-slate-400">Repositories</div><div className="mt-2 text-2xl font-semibold text-brand-purple">{overview.repositories}</div></div>
             <div className="rounded-2xl border border-white/10 bg-slate-900/70 p-4"><div className="text-slate-400">Certificates</div><div className="mt-2 text-2xl font-semibold text-brand-green">{overview.certificates}</div></div>
@@ -222,8 +277,8 @@ function ProjectsPage() {
         <h2 className="mt-2 text-2xl font-semibold">Business case studies, not simple portfolios</h2>
       </div>
       {projects.map((project) => (
-        <div key={project.id} className="rounded-3xl border border-white/10 bg-slate-800/70 p-6 shadow-glow">
-          <div className="flex flex-col gap-4 lg:flex-row lg:items-start lg:justify-between">
+        <div key={project.id} className="rounded-3xl border border-white/10 bg-slate-800/70 p-5 shadow-glow">
+          <div className="flex flex-col gap-3 lg:flex-row lg:items-start lg:justify-between">
             <div>
               <div className="text-sm uppercase tracking-[0.3em] text-brand-cyan">{project.category}</div>
               <h3 className="mt-2 text-2xl font-semibold">{project.title}</h3>
@@ -231,8 +286,8 @@ function ProjectsPage() {
             </div>
             <div className="rounded-2xl border border-white/10 bg-slate-900/70 px-4 py-3 text-sm text-slate-300">Repository <span className="ml-2 font-semibold text-brand-blue">{project.repo}</span></div>
           </div>
-          <div className="mt-6 grid gap-4 lg:grid-cols-[0.8fr,1.2fr]">
-            <div className="space-y-4">
+          <div className="mt-5 grid gap-4 lg:grid-cols-[0.8fr,1.2fr]">
+            <div className="space-y-3">
               <div className="rounded-2xl border border-white/10 bg-slate-900/70 p-4">
                 <div className="text-sm uppercase tracking-[0.3em] text-slate-400">Objectives</div>
                 <ul className="mt-3 space-y-2 text-sm text-slate-300">
@@ -247,7 +302,7 @@ function ProjectsPage() {
               </div>
             </div>
             <div className="space-y-4">
-              <div className="grid gap-3 md:grid-cols-2">
+              <div className="grid gap-2 md:grid-cols-2">
                 {project.kpis.map((kpi) => <div key={kpi.label} className="rounded-2xl border border-white/10 bg-slate-900/70 p-4"><div className="text-sm text-slate-400">{kpi.label}</div><div className="mt-2 text-2xl font-semibold text-white">{kpi.value}</div><div className="mt-1 text-sm text-brand-green">{kpi.delta}</div></div>)}
               </div>
               <div className="rounded-2xl border border-white/10 bg-slate-900/70 p-4">
