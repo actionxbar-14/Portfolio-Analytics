@@ -1,9 +1,9 @@
 {
-  "headline": "Data Analyst and BI Engineer with hands-on experience in Power BI, SQL, Python, and analytics delivery.",
+  "headline": "Aspiring Data Analyst and Data Engineer with strong foundations in SQL, Python, Power BI, ETL, and business analytics.",
   "atsSummary": [
-    "Built executive dashboards and KPI frameworks",
-    "Developed ETL and data cleaning pipelines",
-    "Delivered business analytics across finance and sales domains"
+    "Built interactive business dashboards with Power BI, DAX, and Power Query",
+    "Performed data cleaning, exploratory analysis, and ETL workflows using Python and SQL",
+    "Delivered analytics solutions for banking, sales, and financial reporting use cases"
   ],
-  "downloadUrl": "#"
+  "downloadUrl": "/src/assets/mainResume_DA.pdf"
 }

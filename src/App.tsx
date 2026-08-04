@@ -409,7 +409,7 @@ function CareerPage() {
         <div className="rounded-3xl border border-white/10 bg-slate-800/70 p-5 shadow-glow">
           <div className="mb-4 text-sm uppercase tracking-[0.3em] text-slate-400">Education Analytics</div>
           <div className="grid gap-3">
-            {career.education.map((edu) => <div key={edu.degree} className="rounded-2xl border border-white/10 bg-slate-900/70 p-4"><div className="text-xl font-semibold">{edu.degree}</div><div className="mt-1 text-sm text-slate-400">{edu.school}</div><div className="mt-2 text-sm text-slate-300">Graduation {edu.year} · CGPA {edu.cgpa}</div></div>)}
+            {career.education.map((edu) => <div key={edu.degree} className="rounded-2xl border border-white/10 bg-slate-900/70 p-4"><div className="text-xl font-semibold">{edu.degree}</div><div className="mt-1 text-sm text-slate-400">{edu.school}</div><div className="mt-2 text-sm text-slate-300">Graduation {edu.year} · CGPA {edu.cgpa}</div><div className="mt-3 text-sm text-slate-400">Core focus: computer science fundamentals, analytics, and software engineering.</div></div>)}
           </div>
         </div>
       </div>
@@ -519,7 +519,7 @@ function ResumePage() {
           <div className="text-sm uppercase tracking-[0.3em] text-slate-400">ATS Summary</div>
           <ul className="mt-3 space-y-2 text-sm text-slate-300">{resume.atsSummary.map((entry) => <li key={entry}>• {entry}</li>)}</ul>
         </div>
-        <a href={resume.downloadUrl} className="mt-6 inline-flex rounded-2xl border border-brand-blue/20 bg-brand-blue/10 px-4 py-3 text-sm font-semibold text-brand-blue">Download PDF</a>
+        <a href={resume.downloadUrl} target="_blank" rel="noreferrer" download className="mt-6 inline-flex rounded-2xl border border-brand-blue/20 bg-brand-blue/10 px-4 py-3 text-sm font-semibold text-brand-blue">Download PDF</a>
       </div>
     </motion.div>
   );
