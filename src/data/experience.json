@@ -2,21 +2,21 @@
   {
     "company": "Bluestock Fintech",
     "role": "Data Analyst Intern",
-    "period": "2024 - Present",
+    "period": "July 2026 - Present",
     "highlights": [
-      "Delivered KPI-driven reporting for financial stakeholders",
-      "Built Power BI dashboards with DAX and Power Query",
-      "Automated ETL workflows for business reporting"
+      "Built financial KPI reports and executive dashboards for business stakeholders",
+      "Performed SQL analysis, data cleaning, and Python-based analytics workflows",
+      "Developed Power BI dashboards using DAX, Power Query, and ETL processes"
     ]
   },
   {
     "company": "Independent Projects",
-    "role": "Analytics Builder",
-    "period": "2023 - 2024",
+    "role": "BI & Analytics Learner",
+    "period": "2025 - 2026",
     "highlights": [
-      "Designed dashboards for banking and retail analytics",
-      "Performed data cleaning and exploratory analysis across large datasets",
-      "Published insights through polished, interactive BI products"
+      "Designed analytics dashboards for banking and sales use cases",
+      "Conducted exploratory analysis and prepared structured datasets for reporting",
+      "Delivered interactive BI products with clear business insights and storytelling"
     ]
   }
 ]
