@@ -1,0 +1,10 @@
+[
+  { "name": "SQL", "category": "Data Engineering", "score": 94, "sector": "Core" },
+  { "name": "Python", "category": "Analytics", "score": 91, "sector": "Core" },
+  { "name": "Power BI", "category": "BI", "score": 96, "sector": "Core" },
+  { "name": "DAX", "category": "BI", "score": 93, "sector": "Advanced" },
+  { "name": "Power Query", "category": "Data Prep", "score": 90, "sector": "Advanced" },
+  { "name": "ETL", "category": "Engineering", "score": 88, "sector": "Advanced" },
+  { "name": "Excel", "category": "Reporting", "score": 87, "sector": "Core" },
+  { "name": "Pandas", "category": "Analytics", "score": 85, "sector": "Core" }
+]

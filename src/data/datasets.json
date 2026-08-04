@@ -1,0 +1,30 @@
+[
+  {
+    "name": "Banking Customer Base",
+    "rows": 184320,
+    "columns": 24,
+    "size": "18.2 MB",
+    "type": "Customer",
+    "preview": [
+      { "customer_id": "C-10421", "segment": "Premium", "branch": "Gurgaon", "balance": 128500 },
+      { "customer_id": "C-10422", "segment": "Retail", "branch": "Faridabad", "balance": 84200 },
+      { "customer_id": "C-10423", "segment": "SME", "branch": "Noida", "balance": 210700 }
+    ],
+    "dashboardLink": "/projects/banking",
+    "githubLink": "https://github.com/anubhav/banking-customer-dataset"
+  },
+  {
+    "name": "Sales Transactions",
+    "rows": 91256,
+    "columns": 18,
+    "size": "12.7 MB",
+    "type": "Transactions",
+    "preview": [
+      { "order_id": "ORD-8841", "brand": "Galaxy", "city": "Mumbai", "revenue": 74200 },
+      { "order_id": "ORD-8842", "brand": "Pixel", "city": "Delhi", "revenue": 56100 },
+      { "order_id": "ORD-8843", "brand": "OnePlus", "city": "Pune", "revenue": 43100 }
+    ],
+    "dashboardLink": "/projects/sales",
+    "githubLink": "https://github.com/anubhav/sales-transactions-dataset"
+  }
+]

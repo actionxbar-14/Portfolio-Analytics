@@ -1,0 +1,58 @@
+[
+  {
+    "id": "banking",
+    "title": "Banking Analytics Dashboard",
+    "category": "Financial Intelligence",
+    "tools": ["Power BI", "Python", "Power Query", "DAX", "Excel"],
+    "summary": "A multi-layer banking performance platform covering loan, deposit, branch, and customer health.",
+    "problem": "Leadership needed a unified view of portfolio health across deposits, loan delinquencies, and regional branch performance.",
+    "objectives": ["Reduce risk visibility gaps", "Track branch productivity", "Unify financial KPIs"],
+    "kpis": [
+      { "label": "Total Deposits", "value": "$4.8B", "delta": "+12.4%" },
+      { "label": "Active Loans", "value": "$2.1B", "delta": "+8.2%" },
+      { "label": "Customer Base", "value": "184K", "delta": "+6.7%" },
+      { "label": "Branch Efficiency", "value": "89%", "delta": "+3.1%" }
+    ],
+    "metrics": [
+      { "name": "Deposits", "value": 84 },
+      { "name": "Loans", "value": 67 },
+      { "name": "Customers", "value": 74 },
+      { "name": "Branches", "value": 58 }
+    ],
+    "insights": [
+      "Tier-1 branches showed 14% higher transaction growth than regional branches.",
+      "Delinquency risk is concentrated in medium-ticket loans with reduced repayment velocity.",
+      "Cross-sell conversion is strongest in premium customer cohorts."
+    ],
+    "tech": ["Power BI", "DAX", "Power Query", "ETL", "Python"],
+    "repo": "https://github.com/anubhav/pathak-banking-analytics"
+  },
+  {
+    "id": "sales",
+    "title": "Mobile Sales Analytics Dashboard",
+    "category": "Commercial Intelligence",
+    "tools": ["Power BI", "DAX", "Power Query", "Excel"],
+    "summary": "An executive sales intelligence dashboard for tracking revenue, brand mix, and city-level seller performance.",
+    "problem": "Sales leadership lacked a single view of product performance, brand share, and city-wise momentum.",
+    "objectives": ["Monitor revenue trend", "Benchmark brands", "Identify city opportunities"],
+    "kpis": [
+      { "label": "Revenue", "value": "$19.4M", "delta": "+21.6%" },
+      { "label": "Orders", "value": "118K", "delta": "+15.3%" },
+      { "label": "Top Brand", "value": "Galaxy", "delta": "+9.8%" },
+      { "label": "Best City", "value": "Mumbai", "delta": "+12.1%" }
+    ],
+    "metrics": [
+      { "name": "Revenue", "value": 91 },
+      { "name": "Orders", "value": 77 },
+      { "name": "Brands", "value": 68 },
+      { "name": "Cities", "value": 81 }
+    ],
+    "insights": [
+      "Premium devices drove 63% of margin contribution despite only 34% of unit volume.",
+      "Urban markets outperformed with a 22% stronger repeat purchase rate.",
+      "Retail partner performance is highly correlated with campaign intensity."
+    ],
+    "tech": ["Power BI", "DAX", "Power Query", "Excel", "EDA"],
+    "repo": "https://github.com/anubhav/mobile-sales-analytics"
+  }
+]

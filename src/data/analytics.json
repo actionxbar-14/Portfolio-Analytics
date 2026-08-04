@@ -1,0 +1,38 @@
+{
+  "overview": {
+    "projectsCompleted": 8,
+    "dashboardsBuilt": 12,
+    "datasetsAnalysed": 24,
+    "rowsProcessed": "38.2M",
+    "sqlQueries": 640,
+    "daxMeasures": 182,
+    "pythonScripts": 47,
+    "learningHours": 840,
+    "internshipDuration": "6 months",
+    "repositories": 9,
+    "certificates": 6
+  },
+  "timeline": [
+    { "month": "Jan", "value": 18 },
+    { "month": "Feb", "value": 26 },
+    { "month": "Mar", "value": 31 },
+    { "month": "Apr", "value": 29 },
+    { "month": "May", "value": 42 },
+    { "month": "Jun", "value": 37 },
+    { "month": "Jul", "value": 46 }
+  ],
+  "categories": [
+    { "name": "Banking", "value": 28 },
+    { "name": "Sales", "value": 24 },
+    { "name": "ETL", "value": 19 },
+    { "name": "Reporting", "value": 17 },
+    { "name": "Product", "value": 12 }
+  ],
+  "technologyDistribution": [
+    { "name": "Power BI", "value": 32 },
+    { "name": "SQL", "value": 28 },
+    { "name": "Python", "value": 23 },
+    { "name": "Excel", "value": 10 },
+    { "name": "Git", "value": 7 }
+  ]
+}

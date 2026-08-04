@@ -1,0 +1,17 @@
+{
+  "summary": "Analytics professional focused on BI, engineering, and data products.",
+  "timeline": [
+    { "year": "2024", "title": "Data Analyst Intern", "company": "Bluestock Fintech", "detail": "Built reporting systems and financial analytics solutions." },
+    { "year": "2023", "title": "BI Practice Learner", "company": "Independent", "detail": "Developed dashboards and ETL workflows around business data." },
+    { "year": "2022", "title": "CS Undergraduate", "company": "Academic", "detail": "Focused on data structures, statistics, and software engineering fundamentals." }
+  ],
+  "education": [
+    { "degree": "B.Tech Computer Science", "school": "XYZ University", "year": "2027", "cgpa": "8.7" }
+  ],
+  "growth": [
+    { "year": "2022", "value": 2 },
+    { "year": "2023", "value": 5 },
+    { "year": "2024", "value": 8 },
+    { "year": "2025", "value": 12 }
+  ]
+}

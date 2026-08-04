@@ -1,0 +1,23 @@
+[
+  {
+    "title": "Power BI Data Analyst",
+    "issuer": "Microsoft",
+    "date": "2025",
+    "hours": 24,
+    "tags": ["Power BI", "DAX", "Dashboards"]
+  },
+  {
+    "title": "SQL for Data Analysis",
+    "issuer": "Coursera",
+    "date": "2024",
+    "hours": 16,
+    "tags": ["SQL", "Analytics"]
+  },
+  {
+    "title": "Python for Data Science",
+    "issuer": "Google",
+    "date": "2024",
+    "hours": 20,
+    "tags": ["Python", "Pandas"]
+  }
+]
