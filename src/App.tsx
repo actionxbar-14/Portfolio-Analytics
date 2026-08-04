@@ -11,6 +11,7 @@ import experience from './data/experience.json';
 import resume from './data/resume.json';
 import certificates from './data/certificates.json';
 import repository from './data/repository.json';
+import portfolioAvatar from './assets/portfolio_img.png';
 import { ResponsiveContainer, AreaChart, Area, BarChart, Bar, CartesianGrid, XAxis, YAxis, Tooltip, PieChart, Pie, Cell, RadarChart, PolarGrid, PolarAngleAxis, PolarRadiusAxis, Radar } from 'recharts';
 
 type StatCardProps = {
@@ -52,8 +53,8 @@ function App() {
       <div className="flex min-h-screen">
         <aside className="hidden w-72 flex-col border-r border-white/10 bg-slate-900/80 p-6 lg:flex">
           <div className="mb-8">
-            <div className="text-sm uppercase tracking-[0.28em] text-brand-cyan">AP Insight Studio</div>
-            <div className="mt-2 text-xl font-semibold">Personal Business Intelligence Platform</div>
+            <div className="text-sm uppercase tracking-[0.28em] text-brand-cyan">Anubhav Career Portfolio</div>
+            <div className="mt-2 text-xl font-semibold">Professional analytics-driven career showcase</div>
           </div>
           <nav className="space-y-2">
             {shellItems.map(({ to, label, icon: Icon }) => {
@@ -77,7 +78,7 @@ function App() {
             <div className="flex flex-col gap-4 lg:flex-row lg:items-center lg:justify-between">
               <div>
                 <div className="text-sm uppercase tracking-[0.3em] text-slate-400">Enterprise Analytics Workspace</div>
-                <div className="text-2xl font-semibold">Anubhav Pathak · Data & BI Intelligence</div>
+                <div className="text-2xl font-semibold">Anubhav Pathak · Aspiring Data Analyst | Data Engineer</div>
               </div>
               <div className="flex items-center gap-3 rounded-2xl border border-white/10 bg-slate-800/70 px-4 py-3">
                 <Search size={18} className="text-slate-400" />
@@ -114,15 +115,18 @@ function HomePage() {
   return (
     <motion.div initial={{ opacity: 0, y: 28 }} animate={{ opacity: 1, y: 0 }} exit={{ opacity: 0, y: -28 }} className="space-y-6">
       <div className="rounded-3xl border border-white/10 bg-gradient-to-br from-slate-800/90 to-slate-900/80 p-6 shadow-glow">
-        <div className="grid gap-6 lg:grid-cols-[1.2fr,0.8fr]">
+        <div className="grid gap-6 lg:grid-cols-[1.15fr,0.85fr]">
           <div>
             <div className="text-sm uppercase tracking-[0.32em] text-brand-cyan">Executive Intelligence Overview</div>
             <h1 className="mt-3 text-3xl font-semibold sm:text-4xl">Business analytics portfolio shaped as a live enterprise operating system.</h1>
             <p className="mt-4 max-w-2xl text-slate-400">Every metric, project, and skill is framed as an analytical asset for recruiters and hiring teams.</p>
           </div>
-          <div className="rounded-2xl border border-white/10 bg-slate-900/70 p-5">
-            <div className="text-sm text-slate-400">Signal Summary</div>
-            <div className="mt-4 grid grid-cols-2 gap-3">
+          <div className="rounded-2xl border border-white/10 bg-slate-900/70 p-4">
+            <div className="overflow-hidden rounded-2xl border border-white/10 bg-transparent">
+              <img src={portfolioAvatar} alt="Anubhav Pathak" className="h-64 w-full object-contain" />
+            </div>
+            <div className="mt-4 text-sm text-slate-400">Signal Summary</div>
+            <div className="mt-3 grid grid-cols-2 gap-3">
               <div className="rounded-xl bg-brand-blue/10 p-3"><div className="text-2xl font-semibold text-brand-blue">{overview.projectsCompleted}</div><div className="text-xs text-slate-400">Projects</div></div>
               <div className="rounded-xl bg-brand-cyan/10 p-3"><div className="text-2xl font-semibold text-brand-cyan">{overview.dashboardsBuilt}</div><div className="text-xs text-slate-400">Dashboards</div></div>
               <div className="rounded-xl bg-brand-purple/10 p-3"><div className="text-2xl font-semibold text-brand-purple">{overview.datasetsAnalysed}</div><div className="text-xs text-slate-400">Datasets</div></div>

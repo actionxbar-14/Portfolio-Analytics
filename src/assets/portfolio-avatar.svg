@@ -1,0 +1,21 @@
+<svg width="640" height="720" viewBox="0 0 640 720" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <rect width="640" height="720" rx="40" fill="#07111F"/>
+  <rect x="28" y="28" width="584" height="664" rx="32" fill="url(#bg)"/>
+  <circle cx="472" cy="220" r="172" fill="rgba(255,255,255,0.08)"/>
+  <circle cx="320" cy="296" r="152" fill="#0F172A" stroke="rgba(255,255,255,0.18)" stroke-width="6"/>
+  <path d="M220 512C235 420 278 374 320 374C362 374 405 421 420 512" fill="#F0C48D"/>
+  <path d="M226 286C226 221 275 174 320 174C365 174 414 221 414 286C414 339 372 389 320 389C268 389 226 339 226 286Z" fill="#F2C89E"/>
+  <path d="M260 250C260 198 297 163 320 163C343 163 380 198 380 250C380 312 340 347 320 347C300 347 260 310 260 250Z" fill="#111827"/>
+  <path d="M246 274C246 240 271 212 300 212H340C369 212 394 240 394 274V314H246V274Z" fill="#111827"/>
+  <path d="M242 290C242 227 285 182 320 182C355 182 398 227 398 290V332H242V290Z" fill="#F2C89E"/>
+  <path d="M276 268C276 238 299 214 328 214H332C362 214 384 238 384 268V314H276V268Z" fill="#0F172A"/>
+  <path d="M250 370C270 340 292 326 320 326C348 326 370 340 390 370" stroke="#C0846C" stroke-width="10" stroke-linecap="round"/>
+  <rect x="168" y="474" width="304" height="88" rx="24" fill="rgba(255,255,255,0.08)" stroke="rgba(255,255,255,0.16)"/>
+  <text x="320" y="530" text-anchor="middle" fill="#F8FAFC" font-family="Inter, Arial, sans-serif" font-size="36" font-weight="700">ANUBHAV</text>
+  <defs>
+    <linearGradient id="bg" x1="64" y1="54" x2="576" y2="680" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#0F172A"/>
+      <stop offset="1" stop-color="#1E293B"/>
+    </linearGradient>
+  </defs>
+</svg>
